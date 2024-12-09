@@ -4,3 +4,13 @@ export function capitalize(string) {
   let capitalized = firstLetter + remaining;
   return capitalized;
 }
+
+export function reversedString(string) {
+  let reversed = "";
+  for (let i = string.length - 1; i >= 0; i--) {
+    let last = string[i];
+    string = string.slice(0, i);
+    reversed = reversed.concat(last);
+  }
+  return reversed;
+}
