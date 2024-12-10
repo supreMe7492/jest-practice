@@ -1,4 +1,10 @@
-import { calculator, capitalize, reversedString } from "../src/script";
+import {
+  analyzeArray,
+  calculator,
+  capitalize,
+  ceaserCipher,
+  reversedString,
+} from "../src/script";
 
 test("hello should be Hello", () => {
   expect(capitalize("hello")).toBe("Hello");
@@ -19,4 +25,16 @@ test("multiply from calculator", () => {
 });
 test("divide from calculator", () => {
   expect(calculator.divide(4, 2)).toBe(2);
+});
+test("hello should be khoor", () => {
+  expect(ceaserCipher("hello", 3)).toBe("khoor");
+});
+test("arrAnalyze", () => {
+  const arrayAnalyze = analyzeArray([1, 8, 3, 4, 2, 6]);
+  expect(arrayAnalyze).toEqual({
+    average: 4,
+    min: 1,
+    max: 8,
+    length: 6,
+  });
 });
